@@ -1,0 +1,7 @@
+<h1>A SINGLE Flat</h1>
+
+<%# In our SHOW page, we are going to display information of a SINGLE flat %>
+<%# Thats why in ourl URL we have a dynamic number in our router /flats/:id   --> :id the dynamic identifier of each flat %>
+<h1><%= @flat['name'] %></h1>
+<h2>Price: <%= @flat['price'] %> <%= @flat['priceCurrency'] %></h2>
+<%= image_tag @flat['imageUrl'], alt: @flat['name'] %>

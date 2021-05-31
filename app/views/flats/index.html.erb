@@ -1,0 +1,16 @@
+<h1>ALL the Flats</h1>
+
+<%# The instance variable @flats is available to use, because we defined it in our INDEX method %>
+<%= @flats %>
+
+<%# We iterate over the @flats array, to display the information of each on of them %>
+<%# We are also creating a LINK (line 11), to be able to re-route the user, to the SHOW action of the Flats controller, where we need to specify the ID of said flat %>
+<%# https://www.rubyguides.com/2019/05/rails-link_to-method/ %>
+<ul>
+  <% @flats.each do |flat| %>
+    <li>
+    <%= link_to flat['name'], flat_path(flat['id']) %>
+     - <%= flat['price'] %> <%= flat['priceCurrency'] %>
+    </li>
+  <% end %>
+</ul>
